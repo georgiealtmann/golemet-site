@@ -12,16 +12,16 @@
   /* Layout: open page, no frame. A sticky top bar, then sections laid out as a left rail (the section title)
      beside a content column, separated by hairlines. One type family and two weights throughout; section labels echo the logo's spaced capitals. */
   color-scheme: light;
-  /* Palette: white page, black text, one red. */
-  --bg: #ffffff;
-  --ink: #111111;
-  --ink-2: rgba(17, 17, 17, .7);
-  --line: rgba(17, 17, 17, .14);
-  --grid: rgba(17, 17, 17, .1);
-  --axis: rgba(17, 17, 17, .5);
-  --hover: rgba(17, 17, 17, .05);
-  --accent: #e30613;
-  --tint: rgba(227, 6, 19, .16);
+  /* Palette: warm paper page, soft black text, one muted red. */
+  --bg: #faf7f2;
+  --ink: #191919;
+  --ink-2: rgba(25, 25, 25, .7);
+  --line: rgba(25, 25, 25, .12);
+  --grid: rgba(25, 25, 25, .09);
+  --axis: rgba(25, 25, 25, .45);
+  --hover: rgba(25, 25, 25, .05);
+  --accent: #b0303a;
+  --tint: rgba(176, 48, 58, .16);
   /* Helvetica everywhere: the system copy on Apple devices, Arial (its near twin) on Windows. Body, interface and metadata all follow --font-head. */
   --font-head: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
   --font-body: var(--font-head);
@@ -147,7 +147,7 @@ a.inline:hover { color: var(--accent); text-decoration-color: var(--accent); }
 .team { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 32px; margin-top: 40px; }
 .avatar {
   width: 72px; aspect-ratio: 1; margin-bottom: 14px; border-radius: 50%; overflow: hidden;
-  display: grid; place-items: center; background: none; border: 1px solid var(--axis); color: var(--ink);
+  display: grid; place-items: center; background: none; border: 1px solid var(--line); color: var(--ink);
   font: 500 18px/1 var(--font-ui); letter-spacing: .01em;
 }
 .avatar img { width: 100%; height: 100%; object-fit: cover; }
@@ -494,7 +494,7 @@ a.mono[href]:hover { color: var(--accent); border-bottom-color: var(--accent); }
     var n = parseInt(h, 16); return [n >> 16 & 255, n >> 8 & 255, n & 255];
   }
   function artColours() {
-    var ink = tok('--ink', '#111111'), accent = tok('--accent', '#e30613'), bg = tok('--bg', '#ffffff');
+    var ink = tok('--ink', '#191919'), accent = tok('--accent', '#b0303a'), bg = tok('--bg', '#faf7f2');
     W.colours = { ink: ink, accent: accent, bg: bg, inkRgb: hexRgb(ink), accentRgb: hexRgb(accent) };
   }
   function blend(q) {
