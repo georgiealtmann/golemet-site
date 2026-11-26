@@ -32,6 +32,7 @@
   --body-lh: 1.72;
   --lede-size: 18px;
   --pad: 32px;
+  --edge: 48px;
   --bar-h: 64px;
   --rail: 220px;
   --gap: 40px;
@@ -56,6 +57,7 @@ svg, canvas, img { display: block; max-width: 100%; }
 [id] { scroll-margin-top: calc(var(--bar-h) + 20px); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.frame { width: min(100% - 2 * var(--edge), 1184px); margin: var(--edge) auto; border: 1px solid var(--line); }
 .wrap { max-width: 1120px; margin: 0 auto; padding-inline: var(--pad); }
 
 /* Top bar */
@@ -64,7 +66,7 @@ svg, canvas, img { display: block; max-width: 100%; }
 .brand { display: flex; align-items: center; gap: 12px; }
 .brand-mark { height: 32px; width: auto; flex: none; }
 /* The name in the page's own typeface, light and widely spaced like the logo artwork. */
-.brand-word { font: 400 14px/1 var(--font-head); letter-spacing: .34em; text-transform: uppercase; margin-right: -.34em; color: var(--ink); }
+.brand-word { font: 500 14px/1 var(--font-head); letter-spacing: .34em; text-transform: uppercase; margin-right: -.34em; color: var(--ink); }
 .bar-nav { display: flex; align-items: center; gap: 30px; }
 .bar-nav a {
   display: block; padding: 6px 0; border-bottom: 2px solid transparent;
@@ -168,7 +170,8 @@ a.inline:hover { color: var(--accent); text-decoration-color: var(--accent); }
 .btn.small { gap: 8px; padding: 10px 14px; font-size: 13px; }
 
 /* Footer */
-.foot { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; column-gap: 24px; padding-block: 26px 30px; border-top: 1px solid var(--line); }
+.foot { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; column-gap: 24px; padding-block: 26px 30px; }
+footer { border-top: 1px solid var(--line); }
 .foot .brand { justify-self: start; }
 .foot-actions { justify-self: end; display: flex; align-items: center; gap: 26px; }
 .mono { font: 400 13px/1.45 var(--font-mono); color: var(--ink-2); font-variant-numeric: lining-nums; }
@@ -177,13 +180,14 @@ a.mono[href]:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .legal { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 18px; }
 
 @media (max-width: 899px) {
-  :root { --rail: 150px; --gap: 28px; }
+  :root { --rail: 150px; --gap: 28px; --edge: 24px; }
   .hero { grid-template-columns: minmax(0, 1fr); padding-block: 64px 60px; }
   .split { grid-template-columns: minmax(0, 1fr); gap: 28px; }
 }
 
 @media (max-width: 767px) {
-  :root { --pad: 20px; --bar-h: 58px; }
+  :root { --pad: 20px; --bar-h: 58px; --edge: 0px; }
+  .frame { width: 100%; margin: 0; border: 0; }
   .bar-nav { display: none; }
   .menu-toggle {
     display: block; padding: 8px 0; border: 0; background: none; color: var(--ink); cursor: pointer;
@@ -226,6 +230,7 @@ a.mono[href]:hover { color: var(--accent); border-bottom-color: var(--accent); }
 </head>
 <body id="top">
 
+<div class="frame">
 <header class="bar">
   <div class="wrap bar-in">
     <a class="brand" href="#top" aria-label="Golemet, back to top">
@@ -357,6 +362,7 @@ a.mono[href]:hover { color: var(--accent); border-bottom-color: var(--accent); }
     </div>
   </div>
 </footer>
+</div>
 
 
 <script>
