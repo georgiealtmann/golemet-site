@@ -6,7 +6,8 @@
 <title>Golemet</title>
 <meta name="description" content="Golemet studies what happens to safety when teams of AI agents do the work: when they collude, and whether oversight catches it.">
 <link rel="canonical" href="https://golemetlabs.com/">
-<link rel="icon" type="image/png" href="favicon-soft.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<script>if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) && window.requestAnimationFrame) document.documentElement.className += ' intro';</script>
 <style>
 :root {
   /* Layout: open page, no frame. A sticky top bar, then sections laid out as a left rail (the section title)
@@ -64,7 +65,10 @@ svg, canvas, img { display: block; max-width: 100%; }
 .bar { position: sticky; top: 0; z-index: 60; background: var(--bg); border-bottom: 1px solid var(--line); }
 .bar-in { height: var(--bar-h); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand-mark { height: 32px; width: auto; flex: none; }
+.brand-mark { position: relative; z-index: 1; height: 32px; width: auto; flex: none; overflow: visible; }
+/* While the golem fetches the name (see the script), each letter is its own box and turns about its feet. */
+.brand-word .l { display: inline-block; transform-origin: calc(50% - .17em) 88%; }
+.intro .bar .brand-word { visibility: hidden; }
 /* The name in the page's own typeface, light and widely spaced like the logo artwork. */
 .brand-word { font: 500 14px/1 var(--font-head); letter-spacing: .34em; text-transform: uppercase; margin-right: -.34em; color: var(--ink); }
 .bar-nav { display: flex; align-items: center; gap: 30px; }
@@ -234,7 +238,7 @@ a.mono[href]:hover { color: var(--accent); border-bottom-color: var(--accent); }
 <header class="bar">
   <div class="wrap bar-in">
     <a class="brand" href="#top" aria-label="Golemet, back to top">
-      <img class="brand-mark" src="golem-soft.png" alt="" width="205" height="168"><span class="brand-word">Golemet</span>
+      <svg class="brand-mark" viewBox="0 0 205 168" width="205" height="168" aria-hidden="true" focusable="false"><g class="g-legs" opacity="0"><g class="g-leg-l"><path d="M66 137.26 Q66 135.26 67.72 134.24 L80.25 126.78 Q82.4 125.5 84.71 126.46 L98.16 132.06 Q100.93 133.21 100.97 136.21 L101.22 158.09 Q101.26 161.09 98.36 161.85 L84.34 165.5 Q82.4 166.01 80.41 165.77 L67.99 164.28 Q66 164.04 66 162.04 Z" fill="#bdb7b4"/><path d="M66 137.26 Q66 135.26 67.77 136.19 L82.4 143.87 Q82.4 143.87 82.4 143.87 L82.4 164.01 Q82.4 166.01 80.41 165.77 L67.99 164.28 Q66 164.04 66 162.04 Z" fill="#cbc5c2"/><path d="M67.76 136.2 Q66 135.26 67.72 134.24 L80.25 126.78 Q82.4 125.5 84.71 126.46 L98.16 132.06 Q100.93 133.21 98.34 134.72 L83.26 143.53 Q82.4 144.03 81.52 143.56 Z" fill="#e5e0dd"/></g><g class="g-leg-r"><path d="M139 162.04 Q139 164.04 137.01 164.28 L124.59 165.77 Q122.6 166.01 120.66 165.5 L106.64 161.85 Q103.74 161.09 103.78 158.09 L104.03 136.21 Q104.07 133.21 106.84 132.06 L120.29 126.46 Q122.6 125.5 124.75 126.78 L137.28 134.24 Q139 135.26 139 137.26 Z" fill="#bdb7b4"/><path d="M122.6 164.01 Q122.6 166.01 120.66 165.5 L106.64 161.85 Q103.74 161.09 103.78 158.09 L104.03 136.21 Q104.07 133.21 106.67 134.7 L122.6 143.87 Q122.6 143.87 122.6 143.87 Z" fill="#cbc5c2"/><path d="M123.48 143.56 Q122.6 144.03 121.74 143.53 L106.66 134.72 Q104.07 133.21 106.84 132.06 L120.29 126.46 Q122.6 125.5 124.75 126.78 L137.28 134.24 Q139 135.26 137.24 136.2 Z" fill="#e5e0dd"/></g></g><g class="g-body"><g class="g-sit"><path d="M32.9 59.67 Q34 58 36 58 L169 58 Q171 58 172.1 59.67 L194.9 94.33 Q196 96 196.25 97.98 L198.75 118.02 Q199 120 198.77 121.99 L196.23 144.01 Q196 146 194.29 147.03 L177.71 156.97 Q176 158 174 158.06 L126 159.44 Q124 159.5 122 159.5 L83 159.5 Q81 159.5 79 159.44 L31 158.06 Q29 158 27.29 156.97 L10.71 147.03 Q9 146 8.77 144.01 L6.23 121.99 Q6 120 6.25 118.02 L8.75 97.98 Q9 96 10.1 94.33 Z" fill="#aaa4a1"/></g><g class="g-arms" opacity="0"><path d="M31.46 64.93 Q32 63 33.54 64.28 L48.46 76.72 Q50 78 51.41 79.41 L65.59 93.59 Q67 95 65.71 96.53 L47.29 118.47 Q46 120 44.01 120.14 L19.99 121.86 Q18 122 16.44 120.75 L4.56 111.25 Q3 110 4.41 108.59 L23.59 89.41 Q25 88 25.54 86.07 Z" fill="#aaa4a1"/><path d="M179.46 86.07 Q180 88 181.41 89.41 L200.59 108.59 Q202 110 200.44 111.25 L188.56 120.75 Q187 122 185.01 121.86 L160.99 120.14 Q159 120 157.71 118.47 L139.29 96.53 Q138 95 139.41 93.59 L153.59 79.41 Q155 78 156.54 76.72 L171.46 64.28 Q173 63 173.54 64.93 Z" fill="#aaa4a1"/></g><g class="g-sh-l"><path d="M2.19 101 Q2 97 3.43 93.26 L9.57 77.24 Q11 73.5 14.69 71.96 L25.31 67.54 Q29 66 30.79 69.58 L38.66 85.32 Q40 88 40.27 90.99 L41.73 107.01 Q42 110 39.06 110.59 L24.94 113.41 Q22 114 19.06 114.62 L5.94 117.38 Q3 118 2.86 115 Z" fill="#bdb7b4"/><path d="M9.6 77.25 Q11 73.5 14.69 71.96 L25.31 67.54 Q29 66 30.79 69.58 L36.5 81 Q36.5 81 36.5 81 L7 84.2 Q7 84.2 7 84.2 Z" fill="#d8d2cf"/></g><g class="g-sh-r"><path d="M202.14 115 Q202 118 199.06 117.38 L185.94 114.62 Q183 114 180.06 113.41 L165.94 110.59 Q163 110 163.27 107.01 L164.73 90.99 Q165 88 166.34 85.32 L174.21 69.58 Q176 66 179.69 67.54 L190.31 71.96 Q194 73.5 195.43 77.24 L201.57 93.26 Q203 97 202.81 101 Z" fill="#bdb7b4"/><path d="M198 84.2 Q198 84.2 198 84.2 L168.5 81 Q168.5 81 168.5 81 L174.21 69.58 Q176 66 179.69 67.54 L190.31 71.96 Q194 73.5 195.4 77.25 Z" fill="#d8d2cf"/></g><g class="g-joint" opacity="0"><path d="M75.75 103.98 Q76 102 78 102 L127 102 Q129 102 129.25 103.98 L130.75 116.02 Q131 118 130.06 119.77 L122.94 133.23 Q122 135 122.05 137 L122.45 154 Q122.5 156 120.5 156 L84.5 156 Q82.5 156 82.55 154 L82.95 137 Q83 135 82.06 133.23 L74.94 119.77 Q74 118 74.25 116.02 Z" fill="#aaa4a1"/></g><path d="M83.83 138.59 Q84 136.6 86 136.6 L119 136.6 Q121 136.6 121.17 138.59 L122.83 158.01 Q123 160 121 160 L84 160 Q82 160 82.17 158.01 Z" fill="#bdb7b4"/><path d="M73.26 99.86 Q74 98 76 98 L129 98 Q131 98 131.74 99.86 L133.03 103.07 Q133.4 104 133.51 104.99 L134.66 115.02 Q135 118 133.14 120.35 L123.86 132.05 Q122 134.4 119 134.4 L86 134.4 Q83 134.4 81.14 132.05 L71.86 120.35 Q70 118 70.34 115.02 L71.49 104.99 Q71.6 104 71.97 103.07 Z" fill="#cbc5c2"/><path d="M73.27 99.86 Q74 98 76 98 L129 98 Q131 98 131.73 99.86 L133.2 103.6 Q133.2 103.6 133.2 103.6 L71.8 103.6 Q71.8 103.6 71.8 103.6 Z" fill="#e5e0dd"/><path d="M37.62 29.51 Q40 24 45.76 22.32 L84.16 11.12 Q88 10 92 10 L113 10 Q117 10 120.84 11.12 L159.24 22.32 Q165 24 167.38 29.51 L172.52 41.41 Q174.5 46 174.97 50.98 L175.63 58.02 Q176 62 173.25 64.9 L160.06 78.82 Q158 81 155.57 82.75 L135.43 97.25 Q133 99 130 99 L75 99 Q72 99 69.57 97.25 L49.43 82.75 Q47 81 44.94 78.82 L31.75 64.9 Q29 62 29.37 58.02 L30.03 50.98 Q30.5 46 32.48 41.41 Z" fill="#cbc5c2"/><path d="M43.75 28.69 Q40 24 45.76 22.32 L84.16 11.12 Q88 10 92 10 L113 10 Q117 10 120.84 11.12 L159.24 22.32 Q165 24 161.25 28.69 L147 46.5 Q147 46.5 147 46.5 L128 40 Q128 40 128 40 L77 40 Q77 40 77 40 L58 46.5 Q58 46.5 58 46.5 Z" fill="#d8d2cf"/><path d="M80 12.33 Q80 12.33 80 12.33 L84.16 11.12 Q88 10 92 10 L113 10 Q117 10 120.84 11.12 L125 12.33 Q125 12.33 125 12.33 L128.4 40 Q128.4 40 128.4 40 L76.6 40 Q76.6 40 76.6 40 Z" fill="#e5e0dd"/><path d="M49.43 82.75 Q47 81 49.32 79.1 L52.6 76.4 Q52.6 76.4 52.6 76.4 L76.2 96.9 Q76.2 96.9 76.2 96.9 L74.1 97.95 Q72 99 70.09 97.63 Z" fill="#e5e0dd"/><path d="M134.91 97.63 Q133 99 130.9 97.95 L128.8 96.9 Q128.8 96.9 128.8 96.9 L152.4 76.4 Q152.4 76.4 152.4 76.4 L155.68 79.1 Q158 81 155.57 82.75 Z" fill="#e5e0dd"/><path d="M72 39.11 Q75 38 78.2 38 L126.8 38 Q130 38 133 39.11 L146 43.89 Q149 45 149.41 48.17 L152.59 72.83 Q153 76 150.59 78.1 L132.41 93.9 Q130 96 126.8 96 L78.2 96 Q75 96 72.59 93.9 L54.41 78.1 Q52 76 52.41 72.83 L55.59 48.17 Q56 45 59 43.89 Z" fill="#989290"/><path d="M74.81 44.03 Q77.2 43 79.8 43 L125.2 43 Q127.8 43 130.19 44.03 L141.21 48.77 Q143.6 49.8 143.93 52.38 L146.47 72.02 Q146.8 74.6 144.82 76.29 L129.58 89.31 Q127.6 91 125 91 L80 91 Q77.4 91 75.42 89.31 L60.18 76.29 Q58.2 74.6 58.53 72.02 L61.07 52.38 Q61.4 49.8 63.79 48.77 Z" fill="#d8d2cf"/><ellipse cx="82" cy="68.6" rx="6.5" ry="7.9" fill="#4b4644"/><ellipse cx="123" cy="68.6" rx="6.5" ry="7.9" fill="#4b4644"/><path d="M93.6 78 Q102.5 86.6 111.4 78" fill="none" stroke="#4b4644" stroke-width="2.7" stroke-linecap="round"/><ellipse cx="102.5" cy="9.7" rx="13.4" ry="3.2" fill="#989290"/><ellipse cx="102.5" cy="8.6" rx="12.4" ry="2.6" fill="#d8d2cf"/><path d="M93.2 8.2 Q93.2 1.2 102.5 1.2 Q111.8 1.2 111.8 8.2 Z" fill="#bdb7b4"/><g class="g-fist-l"><path d="M28 128.6 Q28 128.6 28 128.6 L56 113.6 Q56 113.6 56 113.6 L60 117 Q60 117 60 117 L38 129.6 Q38 129.6 38 129.6 L38 160.4 Q38 162.4 36 162.48 L30 162.72 Q28 162.8 28 160.8 Z" fill="#989290"/><path d="M4.46 121 Q4.6 118 7.38 116.88 L31.22 107.32 Q34 106.2 36.79 107.3 L54.07 114.09 Q56.4 115 54.19 116.18 L29.4 129.4 Q29.4 129.4 29.4 129.4 L29.4 162 Q29.4 164 27.66 163.01 L11.87 153.98 Q8.4 152 7.01 148.25 L4.64 141.81 Q3.6 139 3.74 136 Z" fill="#cbc5c2"/><path d="M7.32 119.26 Q4.6 118 7.38 116.88 L31.22 107.32 Q34 106.2 36.79 107.3 L54.07 114.09 Q56.4 115 54.19 116.17 L30.08 128.93 Q29.2 129.4 28.29 128.98 Z" fill="#e5e0dd"/><path d="M37 130.5 Q37 128.5 38.72 127.48 L54.85 117.88 Q57 116.6 59.31 117.56 L76.83 124.85 Q79.6 126 79.64 129 L79.96 157 Q80 160 77.1 160.76 L58.94 165.5 Q57 166 55.01 165.76 L38.99 163.84 Q37 163.6 37 161.6 Z" fill="#bdb7b4"/><path d="M37 130.5 Q37 128.5 38.77 129.43 L57 139 Q57 139 57 139 L57 164 Q57 166 55.01 165.76 L38.99 163.84 Q37 163.6 37 161.6 Z" fill="#cbc5c2"/><path d="M38.76 129.44 Q37 128.5 38.72 127.48 L54.85 117.88 Q57 116.6 59.31 117.56 L76.83 124.85 Q79.6 126 77.01 127.51 L57.86 138.7 Q57 139.2 56.12 138.73 Z" fill="#e5e0dd"/></g><g class="g-fist-r"><path d="M177 160.8 Q177 162.8 175 162.72 L169 162.48 Q167 162.4 167 160.4 L167 129.6 Q167 129.6 167 129.6 L145 117 Q145 117 145 117 L149 113.6 Q149 113.6 149 113.6 L177 128.6 Q177 128.6 177 128.6 Z" fill="#989290"/><path d="M201.26 136 Q201.4 139 200.36 141.81 L197.99 148.25 Q196.6 152 193.13 153.98 L177.34 163.01 Q175.6 164 175.6 162 L175.6 129.4 Q175.6 129.4 175.6 129.4 L150.81 116.18 Q148.6 115 150.93 114.09 L168.21 107.3 Q171 106.2 173.78 107.32 L197.62 116.88 Q200.4 118 200.54 121 Z" fill="#bdb7b4"/><path d="M176.71 128.98 Q175.8 129.4 174.92 128.93 L150.81 116.17 Q148.6 115 150.93 114.09 L168.21 107.3 Q171 106.2 173.78 107.32 L197.62 116.88 Q200.4 118 197.68 119.26 Z" fill="#e5e0dd"/><path d="M168 161.6 Q168 163.6 166.01 163.84 L149.99 165.76 Q148 166 146.06 165.5 L127.9 160.76 Q125 160 125.04 157 L125.36 129 Q125.4 126 128.17 124.85 L145.69 117.56 Q148 116.6 150.15 117.88 L166.28 127.48 Q168 128.5 168 130.5 Z" fill="#bdb7b4"/><path d="M148 164 Q148 166 146.06 165.5 L127.9 160.76 Q125 160 125.04 157 L125.36 129 Q125.4 126 128 127.5 L148 139 Q148 139 148 139 Z" fill="#cbc5c2"/><path d="M148.88 138.73 Q148 139.2 147.14 138.7 L127.99 127.51 Q125.4 126 128.17 124.85 L145.69 117.56 Q148 116.6 150.15 117.88 L166.28 127.48 Q168 128.5 166.24 129.44 Z" fill="#e5e0dd"/></g></g></svg><span class="brand-word">Golemet</span>
     </a>
     <nav class="bar-nav" aria-label="Primary">
       <a href="#work">Our work</a>
@@ -348,7 +352,7 @@ a.mono[href]:hover { color: var(--accent); border-bottom-color: var(--accent); }
   <div class="wrap">
     <div class="foot">
       <a class="brand" href="#top" aria-label="Golemet, back to top">
-        <img class="brand-mark" src="golem-soft.png" alt="" width="205" height="168"><span class="brand-word">Golemet</span>
+        <img class="brand-mark" src="golem.svg" alt="" width="205" height="168"><span class="brand-word">Golemet</span>
       </a>
       <div class="legal mono">
         <span>© 2026 Golemet</span>
@@ -476,6 +480,106 @@ a.mono[href]:hover { color: var(--accent); border-bottom-color: var(--accent); }
     chart.insertBefore(svg, tip);
   }
 
+  /* ---------- Top bar: the golem fetches its name ----------
+     Once, when the page opens: the letters lie in a heap, the golem gets up, walks over, takes hold of the G and
+     hauls the word back to its place, then sits down again. The drawing is the logo itself; standing only moves
+     its stones apart and brings out two more for legs. Skipped when the visitor asks for reduced motion. ---------- */
+  function golemIntro(brand, onDone) {
+    var svg = brand.querySelector('svg.brand-mark'), word = brand.querySelector('.brand-word');
+    function q(c) { return svg.querySelector(c); }
+    var G = { legs: q('.g-legs'), legL: q('.g-leg-l'), legR: q('.g-leg-r'), body: q('.g-body'), sit: q('.g-sit'), arms: q('.g-arms'),
+              shL: q('.g-sh-l'), shR: q('.g-sh-r'), joint: q('.g-joint'), fistL: q('.g-fist-l'), fistR: q('.g-fist-r') };
+    var text = word.textContent, ls = text.split('').map(function (ch) {
+      var s = document.createElement('span'); s.className = 'l'; s.textContent = ch; return s;
+    });
+    word.textContent = ''; ls.forEach(function (s) { word.appendChild(s); });
+
+    /* Sizes follow the logo, so the same code runs at any size. u = one CSS pixel at the logo's usual height of 32. */
+    var mr = svg.getBoundingClientRect(), home = mr.left + mr.width / 2, u = mr.height / 32;
+    var spacing = parseFloat(getComputedStyle(word).letterSpacing) || 0;
+    var f = ls.map(function (l) { var r = l.getBoundingClientRect(); return r.left + (r.width - spacing) / 2 - home; });   /* each letter's place, from the golem's middle */
+
+    var T = { up: 150, out: 430, grab: 900, pull: 1010, stop: 1800, sat: 2000, end: 2200 }, DT = 1000 / 60;
+    var XG = 100 * u, RISE = 15.5, K = 1.07, HOLD = 5.5 * u;
+    function ease(v) { return v <= 0 ? 0 : v >= 1 ? 1 : v * v * (3 - 2 * v); }
+    function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+
+    /* Where the golem is and how it holds itself at time t. x in CSS pixels; the rest in the drawing's own units. */
+    function pose(t) {
+      var p = { x: 0, stand: 0, lean: 0, bob: 0, liftL: 0, liftR: 0, fxR: 0, fyL: 0, fyR: 0, hold: 0 }, v, s, w;
+      if (t < T.up) return p;
+      if (t < T.out) { v = (t - T.up) / (T.out - T.up); p.stand = ease(v); p.lean = -4 * Math.sin(Math.PI * v); return p; }                 /* gets up */
+      p.stand = 1;
+      if (t < T.grab) {                                                                                                                      /* walks over: four steps */
+        v = (t - T.out) / (T.grab - T.out); s = Math.sin(4 * Math.PI * v);
+        p.x = XG * ease(v); p.lean = 6 * s; p.bob = -3 * Math.abs(s);
+        p.liftL = 15 * Math.max(0, s); p.liftR = 15 * Math.max(0, -s); p.fyR = -9 * Math.max(0, s); p.fyL = -9 * Math.max(0, -s);
+      } else if (t < T.pull) {                                                                                                               /* bends to the heap and takes hold */
+        v = (t - T.grab) / (T.pull - T.grab); p.x = XG; p.lean = 9 * Math.sin(Math.PI * v); p.fxR = 10 * ease(v); p.fyR = 6 * ease(v); p.hold = ease(v);
+      } else if (t < T.stop) {                                                                                                               /* hauls it back, a heave at a time */
+        v = (t - T.pull) / (T.stop - T.pull); w = 8 * Math.PI * v; s = Math.sin(w);
+        p.x = XG * (1 - (v - .8 * s / (8 * Math.PI))); p.lean = -7 * ease(v * 8) + 4 * s; p.bob = -2.5 * Math.abs(Math.sin(w / 2));
+        p.liftL = 13 * Math.max(0, s); p.liftR = 13 * Math.max(0, -s); p.fxR = 10; p.fyR = 6 - 3 * Math.max(0, s); p.fyL = -8 * Math.max(0, -s); p.hold = 1;
+      } else {                                                                                                                               /* sits down */
+        v = ease((t - T.stop) / (T.sat - T.stop)); p.stand = 1 - v; p.lean = -7 * (1 - v); p.fxR = 10 * (1 - v); p.fyR = 6 * (1 - v); p.hold = 1 - v;
+      }
+      return p;
+    }
+
+    /* The letters, worked out once for every frame. Each stays in the heap until the line in front of it pulls tight. */
+    var tilt = [-18, 12, -24, 20, -10, 26, -15], lie = [1, 0, 1.5, .5, 1, 0, 1];
+    var pile = f.map(function (x, i) { return XG + x * .5 + (i % 2 ? 1.5 : -1) * u; });
+    var st = ls.map(function (_, i) { return { a: pile[i], r: tilt[i % 7], y: lie[i % 7] * u }; }), frames = [];
+    for (var t = 0; t <= T.end + DT; t += DT) {
+      var p = pose(t), row = [];
+      for (var i = 0; i < ls.length; i++) {
+        var s = st[i], k = K, since = t - T.stop - i * 16;
+        if (since > 0) k = 1 + (K - 1) * Math.exp(-since / 60) * Math.cos(since / 38);                 /* the line closes up with a small bounce */
+        var chain = p.x + f[0] - HOLD * p.hold + (f[i] - f[0]) * k;
+        var a = t < T.pull ? pile[i] : Math.min(pile[i], chain), vel = (s.a - a) / DT, moving = a < pile[i] - .05 * u, done = since > 110;
+        var wantR = !moving ? tilt[i % 7] : done ? 0 : Math.min(15, 5 + vel / u * 70), wantY = !moving ? lie[i % 7] * u : done ? 0 : -.9 * u * Math.abs(Math.sin((t + i * 37) / 45));
+        s.r += (wantR - s.r) * (1 - Math.exp(-DT / 55)); s.y += (wantY - s.y) * (1 - Math.exp(-DT / 40)); s.a = a;
+        row.push('translate(' + (a - f[i]).toFixed(2) + 'px,' + s.y.toFixed(2) + 'px) rotate(' + s.r.toFixed(1) + 'deg)');
+      }
+      frames.push(row);
+    }
+
+    function n(v) { return (Math.round(v * 100) / 100).toString(); }
+    function draw(t) {
+      var p = pose(t), row = frames[Math.min(frames.length - 1, Math.floor(t / DT))], up = p.stand;
+      svg.style.transform = 'translateX(' + p.x.toFixed(2) + 'px)';
+      G.legs.setAttribute('opacity', n(clamp((up - .15) / .35)));
+      G.legL.setAttribute('transform', 'translate(0 ' + n(-p.liftL) + ') rotate(' + n(-p.liftL * .6) + ' 83.5 132)');
+      G.legR.setAttribute('transform', 'translate(0 ' + n(-p.liftR) + ') rotate(' + n(p.liftR * .6) + ' 121.5 132)');
+      G.body.setAttribute('transform', 'translate(0 ' + n(-RISE * up + p.bob) + ') rotate(' + n(p.lean) + ' 102.5 150)');
+      G.arms.setAttribute('opacity', n(clamp(up * 2))); G.joint.setAttribute('opacity', n(clamp(up * 2))); G.sit.setAttribute('opacity', n(clamp(2 - up * 2)));
+      G.shL.setAttribute('transform', 'translate(' + n(-4.8 * up) + ' 0)'); G.shR.setAttribute('transform', 'translate(' + n(4.8 * up) + ' 0)');
+      G.fistL.setAttribute('transform', 'translate(' + n(-16 * up) + ' ' + n(p.fyL) + ')');
+      G.fistR.setAttribute('transform', 'translate(' + n(16 * up + p.fxR) + ' ' + n(p.fyR) + ')');
+      for (var i = 0; i < ls.length; i++) { ls[i].style.transform = row[i]; ls[i].style.opacity = t < 140 ? (t / 140).toFixed(2) : ''; }
+    }
+    function rest() {                                             /* back to the page as written */
+      svg.style.transform = ''; word.textContent = text;
+      ['legL', 'legR', 'body', 'shL', 'shR', 'fistL', 'fistR'].forEach(function (k) { G[k].removeAttribute('transform'); });
+      G.legs.setAttribute('opacity', '0'); G.arms.setAttribute('opacity', '0'); G.joint.setAttribute('opacity', '0'); G.sit.removeAttribute('opacity');
+      if (onDone) onDone();
+    }
+    var t0 = null;
+    function tick(now) {
+      if (t0 === null) t0 = now;
+      var t = now - t0;
+      if (t >= T.end) { rest(); return; }
+      draw(t); requestAnimationFrame(tick);
+    }
+    draw(0); requestAnimationFrame(tick);
+  }
+  (function () {
+    var root = document.documentElement;
+    if (!/(^| )intro( |$)/.test(root.className)) return;
+    try { golemIntro(document.querySelector('.bar .brand')); } catch (e) { /* the logo simply stays as it is */ }
+    root.className = root.className.replace(/(^| )intro(?= |$)/, '');
+  })();
+
   /* ---------- Hero: the overseer ----------
      A grid of agents work together, handing notes to their neighbours. The golem in the middle oversees them but can
      only look one way at a time. Out of its sight some pairs open a private line, step off their marks and turn red.
@@ -487,7 +591,7 @@ a.mono[href]:hover { color: var(--accent); border-bottom-color: var(--accent); }
   var TAU = Math.PI * 2;
   var W = { w: 0, h: 0, pointer: null, colours: null, running: false, visible: true, last: 0, t: 0, count: '' };
   var scene = null;
-  var golemImg = new Image(); golemImg.src = 'golem-soft.png';
+  var golemImg = new Image(); golemImg.src = 'golem.svg';
 
   function hexRgb(hex) {
     var h = hex.replace('#', ''); if (h.length === 3) h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2];
